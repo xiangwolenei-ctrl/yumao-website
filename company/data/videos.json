@@ -1,0 +1,27 @@
+﻿[
+    {
+        "src":  "videos/clip1.mp4",
+        "label":  "Factory environment tour",
+        "poster":  ""
+    },
+    {
+        "src":  "videos/clip2.mp4",
+        "label":  "Company environment",
+        "poster":  ""
+    },
+    {
+        "src":  "videos/clip3.mp4",
+        "label":  "Production line",
+        "poster":  ""
+    },
+    {
+        "src":  "videos/clip4.mp4",
+        "label":  "Workshop",
+        "poster":  ""
+    },
+    {
+        "src":  "videos/clip5.mp4",
+        "label":  "Assembly line",
+        "poster":  ""
+    }
+]
