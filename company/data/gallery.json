@@ -1,74 +1,34 @@
 ﻿[
     {
-        "src":  "images/factory/photo01.jpg",
+        "src":  "images/factory/factory01.jpg",
         "label":  "Factory photo 1"
     },
     {
-        "src":  "images/factory/photo02.jpg",
+        "src":  "images/factory/factory02.jpg",
         "label":  "Factory photo 2"
     },
     {
-        "src":  "images/factory/photo03.jpg",
+        "src":  "images/factory/factory03.jpg",
         "label":  "Factory photo 3"
     },
     {
-        "src":  "images/factory/photo04.jpg",
+        "src":  "images/factory/factory04.jpg",
         "label":  "Factory photo 4"
     },
     {
-        "src":  "images/factory/photo05.jpg",
+        "src":  "images/factory/factory05.jpg",
         "label":  "Factory photo 5"
     },
     {
-        "src":  "images/factory/photo06.jpg",
+        "src":  "images/factory/factory06.jpg",
         "label":  "Factory photo 6"
     },
     {
-        "src":  "images/factory/photo07.jpg",
+        "src":  "images/factory/factory07.jpg",
         "label":  "Factory photo 7"
     },
     {
-        "src":  "images/factory/photo08.jpg",
+        "src":  "images/factory/factory08.jpg",
         "label":  "Factory photo 8"
-    },
-    {
-        "src":  "images/factory/photo09.jpg",
-        "label":  "Factory photo 9"
-    },
-    {
-        "src":  "images/factory/photo10.jpg",
-        "label":  "Factory photo 10"
-    },
-    {
-        "src":  "images/factory/photo11.jpg",
-        "label":  "Factory photo 11"
-    },
-    {
-        "src":  "images/factory/photo12.jpg",
-        "label":  "Factory photo 12"
-    },
-    {
-        "src":  "images/factory/photo13.jpg",
-        "label":  "Factory photo 13"
-    },
-    {
-        "src":  "images/factory/photo14.jpg",
-        "label":  "Factory photo 14"
-    },
-    {
-        "src":  "images/factory/photo15.jpg",
-        "label":  "Factory photo 15"
-    },
-    {
-        "src":  "images/factory/photo16.jpg",
-        "label":  "Factory photo 16"
-    },
-    {
-        "src":  "images/factory/photo17.jpg",
-        "label":  "Factory photo 17"
-    },
-    {
-        "src":  "images/factory/photo18.jpg",
-        "label":  "Factory photo 18"
     }
 ]
