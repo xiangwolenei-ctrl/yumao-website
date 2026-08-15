@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yumao Pet — Smart Pet Water Fountains &amp; Pet Supplies Manufacturer</title>
+<meta name="description" content="ShenZhen Yumao Technology Co., Ltd. — professional manufacturer of pet water fountains, automatic feeders, smart litter boxes. 23,000㎡ factory, OEM/ODM, competitive factory-direct prices.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<header class="nav" id="nav">
+  <div class="nav-inner container">
+    <a href="#top" class="brand">
+      <span class="brand-mark">YU</span>
+      <span class="brand-text">
+        <strong>Yumao Pet</strong>
+        <small>ShenZhen Yumao Technology Co., Ltd.</small>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Manufacturer · OEM / ODM · Factory Direct</p>
+        <h1>Smart Pet Water Fountains<br>&amp; Pet Supplies</h1>
+        <p class="hero-sub">
+          We focus on doing a good job of pet water dispensers. A 23,000 m² self-contained
+          factory with a professional R&amp;D team — from mold development to finished
+          products, one-stop service at competitive prices.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">View Products</a>
+          <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="images/hero.png" alt="Pet water fountain" id="heroImg">
+      </div>
+    </div>
+    <div class="hero-wave" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== Stats ===== -->
+  <section class="stats container">
+    <div class="stat"><strong>23,000 m²</strong><span>Factory Area</span></div>
+    <div class="stat"><strong>80+</strong><span>Products</span></div>
+    <div class="stat"><strong>219</strong><span>Production Staff</span></div>
+    <div class="stat"><strong>13</strong><span>R&amp;D Engineers</span></div>
+  </section>
+
+  <!-- ===== Categories ===== -->
+  <section class="categories container" id="categories">
+    <h2 class="section-title">Product Categories</h2>
+    <p class="section-sub">Full pet product lines — water, feeding, litter &amp; accessories</p>
+    <div class="cat-grid" id="catGrid"></div>
+  </section>
+
+  <!-- ===== Products ===== -->
+  <section class="products container" id="products">
+    <h2 class="section-title">Product Catalog</h2>
+    <p class="section-sub">Prices in USD, FOB basis · Minimum order quantity 100 pcs</p>
+
+    <div class="toolbar">
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Search model, name or keyword…">
+      </div>
+      <div class="filters" id="filterBar"></div>
+    </div>
+
+    <div class="grid" id="productGrid">
+      <div class="loading">Loading products…</div>
+    </div>
+    <div class="empty" id="emptyState" hidden>No products match your search.</div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="contact container" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-card">
+      <div>
+        <h3>ShenZhen Yumao Technology Co., Ltd.</h3>
+        <p>深圳屿贸科技有限公司 · Manufacturing plant: No.6 Dongchang Road, Hengli Town, Dongguan City, Guangdong, China</p>
+      </div>
+      <div class="contact-rows">
+        <div class="contact-row"><span>Contact</span><strong>Siyang Shen</strong></div>
+        <div class="contact-row"><span>Phone / WhatsApp</span><strong><a href="https://wa.me/8613543780054" target="_blank" rel="noopener">+86 135 4378 0054</a> / <a href="https://wa.me/8615639186565" target="_blank" rel="noopener">+86 156 3918 6565</a></strong></div>
+        <div class="contact-row"><span>Business</span><strong>OEM / ODM / Custom Development</strong></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Yumao Pet</strong>
+      <p>We focus on doing a good job of pet water dispensers.</p>
+    </div>
+    <div>
+      <strong>Quick Links</strong>
+      <p><a href="#categories">Categories</a> · <a href="#products">Products</a> · <a href="#contact">Contact</a></p>
+    </div>
+    <div>
+      <strong>Factory</strong>
+      <p>No.6 Dongchang Road, Hengli Town,<br>Dongguan City, Guangdong, China</p>
+    </div>
+  </div>
+  <div class="container footer-bar">© 2026 ShenZhen Yumao Technology Co., Ltd. All rights reserved.</div>
+</footer>
+
+<!-- ===== Product Detail Modal ===== -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="Close">✕</button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
