@@ -7,6 +7,8 @@
   const searchInput = document.getElementById('searchInput');
   const filterBar = document.getElementById('filterBar');
   const catGrid = document.getElementById('catGrid');
+  const hotSection = document.getElementById('hotSection');
+  const hotGrid = document.getElementById('hotGrid');
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modalBody');
 
@@ -70,14 +72,17 @@
     document.body.style.overflow = 'hidden';
   }
 
-  function cardHtml(p) {
+  function cardHtml(p, opts) {
+    opts = opts || {};
     const img = p.image ? p.image.split(',')[0] : '';
     const priceLabel = p.priceDetail && p.priceDetail.length
       ? '$' + Math.min(...p.priceDetail.map(d => d.value)).toFixed(2) + '+'
       : fmtPrice(p.price);
     return (
-      '<div class="card" data-row="' + p.row + '">' +
-        '<div class="card-media">' + (img ? '<img loading="lazy" src="' + IMG_BASE + img + '" alt="' + esc(p.model) + '">' : '') + '</div>' +
+      '<div class="card' + (p.hot ? ' card-hot' : '') + '" data-row="' + p.row + '">' +
+        '<div class="card-media">' + (img ? '<img loading="lazy" src="' + IMG_BASE + img + '" alt="' + esc(p.model) + '">' : '') +
+          (p.hot ? '<span class="hot-badge' + (opts.big ? ' hot-badge-lg' : '') + '">🔥 HOT</span>' : '') +
+        '</div>' +
         '<div class="card-body">' +
           '<div class="card-model">' + esc(p.model) + '</div>' +
           '<div class="card-name">' + esc(p.name || p.model) + '</div>' +
@@ -95,6 +100,17 @@
     );
   }
 
+  function renderHot() {
+    const hots = PRODUCTS.filter(p => p.hot);
+    hotSection.hidden = !hots.length;
+    hotGrid.innerHTML = hots.map(p => cardHtml(p, { big: true })).join('');
+  }
+
+  function openCard(row) {
+    const p = PRODUCTS.find(x => x.row === Number(row));
+    if (p) openModal(p);
+  }
+
   function render() {
     const q = searchInput.value.trim().toLowerCase();
     let list = PRODUCTS;
@@ -110,7 +126,7 @@
       return;
     }
     emptyState.hidden = true;
-    grid.innerHTML = list.map(cardHtml).join('');
+    grid.innerHTML = list.map(p => cardHtml(p)).join('');
   }
 
   function buildFilters() {
@@ -154,12 +170,15 @@
   searchInput.addEventListener('input', () => { clearTimeout(t); t = setTimeout(render, 150); });
 
   // ---- modal ----
-  grid.addEventListener('click', e => {
-    const card = e.target.closest('.card');
-    if (!card) return;
-    const p = PRODUCTS.find(x => x.row === Number(card.dataset.row));
-    if (p) openModal(p);
-  });
+  function bindGridClick(container) {
+    container.addEventListener('click', e => {
+      const card = e.target.closest('.card');
+      if (!card) return;
+      openCard(card.dataset.row);
+    });
+  }
+  bindGridClick(grid);
+  bindGridClick(hotGrid);
   modal.addEventListener('click', e => {
     if (e.target.closest('[data-close]')) { modal.hidden = true; document.body.style.overflow = ''; }
   });
@@ -174,6 +193,7 @@
       PRODUCTS = data;
       buildFilters();
       buildCategories();
+      renderHot();
       render();
       // hero image fallback
       const hero = document.getElementById('heroImg');
