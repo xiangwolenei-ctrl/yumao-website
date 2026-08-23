@@ -131,6 +131,32 @@ section { padding: 72px 0; }
 .chip:hover { border-color: var(--brand); color: var(--brand-dark); }
 .chip.active { background: var(--brand); border-color: var(--brand); color: #fff; }
 
+/* ---------- Hot Sellers ---------- */
+.hot-section {
+  margin: 0 0 34px; padding: 26px 24px 28px; border-radius: 18px;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5 55%, #fff);
+  border: 2px solid #fdba74; box-shadow: 0 8px 28px rgba(249, 115, 22, .14);
+}
+.hot-head { text-align: center; margin-bottom: 22px; }
+.hot-flame { font-size: 30px; display: block; animation: hotPulse 1.6s ease-in-out infinite; }
+.hot-title {
+  font-size: 24px; font-weight: 800; color: #9a3412; margin: 6px 0 4px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.hot-title small { font-size: 16px; font-weight: 700; color: #c2410c; }
+.hot-sub { display: block; font-size: 13px; color: #b45309; }
+.hot-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+@keyframes hotPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+.card-hot { border: 2px solid #fb923c !important; box-shadow: 0 4px 16px rgba(249, 115, 22, .18); }
+.card-hot:hover { box-shadow: 0 10px 26px rgba(249, 115, 22, .28); }
+.hot-badge {
+  position: absolute; top: 10px; left: 10px; z-index: 2;
+  background: linear-gradient(135deg, #f97316, #dc2626); color: #fff;
+  font-size: 11px; font-weight: 800; letter-spacing: .5px;
+  padding: 4px 10px; border-radius: 999px; box-shadow: 0 2px 8px rgba(220, 38, 38, .4);
+}
+.hot-badge-lg { font-size: 13px; padding: 6px 14px; }
+
 /* ---------- Product grid ---------- */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
 .card {
@@ -140,6 +166,7 @@ section { padding: 72px 0; }
 }
 .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
 .card-media {
+  position: relative;
   background: linear-gradient(180deg, #f8fafc, #eef6ff);
   aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; padding: 18px;
 }
