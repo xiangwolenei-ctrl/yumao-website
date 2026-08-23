@@ -38,6 +38,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart version",
+  "hot": true,
   "image": "p004.png"
  },
  {
@@ -79,6 +80,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart version",
+  "hot": true,
   "image": "p005.png"
  },
  {
@@ -120,6 +122,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart version",
+  "hot": true,
   "image": "p006.png"
  },
  {
@@ -161,6 +164,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p007.jpeg"
  },
  {
@@ -202,6 +206,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p008.jpeg"
  },
  {
@@ -246,6 +251,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p009.png"
  },
  {
@@ -290,6 +296,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p010.png"
  },
  {
@@ -330,6 +337,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p011.png"
  },
  {
@@ -372,6 +380,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p012.png"
  },
  {
@@ -414,6 +423,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p013.png"
  },
  {
@@ -456,6 +466,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p014.png"
  },
  {
@@ -499,6 +510,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p015.png"
  },
  {
@@ -539,6 +551,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p016.png"
  },
  {
@@ -580,6 +593,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart APP model",
+  "hot": false,
   "image": "p017.png"
  },
  {
@@ -622,6 +636,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p018.png"
  },
  {
@@ -664,6 +679,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p020.png"
  },
  {
@@ -707,6 +723,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p021.png"
  },
  {
@@ -749,6 +766,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p022.png"
  },
  {
@@ -789,6 +807,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p023.png"
  },
  {
@@ -829,6 +848,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Smart Version",
+  "hot": false,
   "image": "p024.png"
  },
  {
@@ -878,6 +898,7 @@
   ],
   "moq": "100",
   "remark": "plug-in version",
+  "hot": true,
   "image": "p026.png"
  },
  {
@@ -927,6 +948,7 @@
   ],
   "moq": "100",
   "remark": "plug-in version",
+  "hot": true,
   "image": "p027.jpeg"
  },
  {
@@ -970,6 +992,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p028.png"
  },
  {
@@ -1013,6 +1036,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p029.png"
  },
  {
@@ -1055,6 +1079,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p030.png"
  },
  {
@@ -1098,6 +1123,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p031.png"
  },
  {
@@ -1141,6 +1167,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p032.png"
  },
  {
@@ -1182,6 +1209,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p033.png"
  },
  {
@@ -1224,6 +1252,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p034.png"
  },
  {
@@ -1265,6 +1294,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p035.png"
  },
  {
@@ -1307,6 +1337,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p036.png"
  },
  {
@@ -1349,6 +1380,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p037.png"
  },
  {
@@ -1391,6 +1423,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p038.png"
  },
  {
@@ -1433,6 +1466,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p039.png"
  },
  {
@@ -1475,6 +1509,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p040.png"
  },
  {
@@ -1517,6 +1552,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p041.png"
  },
  {
@@ -1560,6 +1596,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p042.png"
  },
  {
@@ -1601,6 +1638,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Plug-in thermostat model",
+  "hot": false,
   "image": "p044.png"
  },
  {
@@ -1642,6 +1680,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Plug-in thermostatic model + Wireless charging",
+  "hot": false,
   "image": "p045.png"
  },
  {
@@ -1685,6 +1724,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p046.png"
  },
  {
@@ -1726,6 +1766,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p047.png"
  },
  {
@@ -1769,6 +1810,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p048.png"
  },
  {
@@ -1810,6 +1852,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p049.png"
  },
  {
@@ -1851,6 +1894,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p050.png"
  },
  {
@@ -1894,6 +1938,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p051.png"
  },
  {
@@ -1935,6 +1980,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p052.png"
  },
  {
@@ -1973,6 +2019,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p054.png"
  },
  {
@@ -2014,6 +2061,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p055.png"
  },
  {
@@ -2057,6 +2105,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p056.png"
  },
  {
@@ -2098,6 +2147,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p057.png"
  },
  {
@@ -2140,6 +2190,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p058.png"
  },
  {
@@ -2181,6 +2232,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p059.png"
  },
  {
@@ -2222,6 +2274,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "plug-in version",
+  "hot": false,
   "image": "p060.png"
  },
  {
@@ -2263,6 +2316,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "large capacity plug-in version",
+  "hot": false,
   "image": "p062.png"
  },
  {
@@ -2304,6 +2358,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "large capacity plug-in version",
+  "hot": false,
   "image": "p063.png"
  },
  {
@@ -2348,6 +2403,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "large capacity plug-in version",
+  "hot": false,
   "image": "p064.png"
  },
  {
@@ -2392,6 +2448,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "large capacity plug-in version",
+  "hot": false,
   "image": "p065.png"
  },
  {
@@ -2433,6 +2490,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "large capacity plug-in version",
+  "hot": false,
   "image": "p066.png"
  },
  {
@@ -2475,6 +2533,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "large capacity Smart Version",
+  "hot": false,
   "image": "p067.png"
  },
  {
@@ -2517,6 +2576,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "large capacity Smart Version",
+  "hot": false,
   "image": "p068.png"
  },
  {
@@ -2560,6 +2620,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries)",
+  "hot": false,
   "image": "p070.png"
  },
  {
@@ -2602,6 +2663,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries)",
+  "hot": false,
   "image": "p071.png"
  },
  {
@@ -2643,6 +2705,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries)",
+  "hot": true,
   "image": "p072.png"
  },
  {
@@ -2686,6 +2749,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries)",
+  "hot": true,
   "image": "p073.png"
  },
  {
@@ -2726,6 +2790,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries)",
+  "hot": false,
   "image": "p074.png"
  },
  {
@@ -2769,6 +2834,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries)",
+  "hot": false,
   "image": "p075.png"
  },
  {
@@ -2810,6 +2876,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries)",
+  "hot": false,
   "image": "p076.png"
  },
  {
@@ -2853,6 +2920,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Dual power mode (plug-in and self-purchased three AAA batteries) Omnichannel, site exclusive sales",
+  "hot": false,
   "image": "p077.png"
  },
  {
@@ -2882,6 +2950,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "",
+  "hot": false,
   "image": "p079.png"
  },
  {
@@ -2912,6 +2981,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "",
+  "hot": false,
   "image": "p080.png"
  },
  {
@@ -2942,6 +3012,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "",
+  "hot": false,
   "image": "p081.png"
  },
  {
@@ -2972,6 +3043,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "",
+  "hot": false,
   "image": "p082.png"
  },
  {
@@ -3002,6 +3074,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "",
+  "hot": false,
   "image": "p084.png"
  },
  {
@@ -3031,6 +3104,7 @@
   "priceDetail": null,
   "moq": "",
   "remark": "Optional models White box packaging",
+  "hot": false,
   "image": "p085a.png,p085b.png"
  },
  {
@@ -3069,6 +3143,7 @@
   "priceDetail": null,
   "moq": "",
   "remark": "customizable",
+  "hot": false,
   "image": "p086.png"
  },
  {
@@ -3097,6 +3172,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Product boxed",
+  "hot": false,
   "image": "p087.png"
  },
  {
@@ -3125,6 +3201,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "matte bag packaging",
+  "hot": false,
   "image": "p088.png"
  },
  {
@@ -3153,6 +3230,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "Purchase three AA batteries and place them",
+  "hot": false,
   "image": "p089.png"
  },
  {
@@ -3184,6 +3262,7 @@
   "priceDetail": null,
   "moq": "100",
   "remark": "",
+  "hot": false,
   "image": "p090.png"
  }
 ]
