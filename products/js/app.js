@@ -107,8 +107,7 @@
   }
 
   function openCard(row) {
-    const p = PRODUCTS.find(x => x.row === Number(row));
-    if (p) openModal(p);
+    window.location.href = 'product/p' + String(row).padStart(3, '0') + '.html';
   }
 
   function render() {
@@ -186,6 +185,42 @@
     if (e.key === 'Escape') { modal.hidden = true; document.body.style.overflow = ''; }
   });
 
+  // ---- hero carousel ----
+  (function carousel() {
+    const track = document.getElementById('carouselTrack');
+    const dotsBox = document.getElementById('carouselDots');
+    if (!track) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    if (slides.length < 2) return;
+    let idx = 0;
+    let timer = null;
+    slides.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.setAttribute('aria-label', 'Slide ' + (i + 1));
+      if (i === 0) d.classList.add('active');
+      d.addEventListener('click', () => go(i, true));
+      dotsBox.appendChild(d);
+    });
+    const dots = dotsBox.querySelectorAll('button');
+    function go(n, reset) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      if (reset) restart();
+    }
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(() => go(idx + 1), 6000);
+    }
+    document.querySelectorAll('[data-carousel]').forEach(btn => {
+      btn.addEventListener('click', () => go(btn.dataset.carousel === 'next' ? idx + 1 : idx - 1, true));
+    });
+    const hero = document.getElementById('hero');
+    hero.addEventListener('mouseenter', () => clearInterval(timer));
+    hero.addEventListener('mouseleave', restart);
+    restart();
+  })();
+
   // ---- init ----
   fetch('data/products.json')
     .then(r => r.json())
@@ -195,9 +230,6 @@
       buildCategories();
       renderHot();
       render();
-      // hero image fallback
-      const hero = document.getElementById('heroImg');
-      hero.onerror = () => { hero.style.display = 'none'; };
     })
     .catch(err => {
       grid.innerHTML = '<div class="loading">Failed to load product data: ' + esc(err.message) + '</div>';
