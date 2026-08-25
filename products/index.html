@@ -23,6 +23,8 @@
       <a href="#hero">Home</a>
       <a href="#categories">Categories</a>
       <a href="#products">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a href="news.html">News</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
@@ -31,25 +33,91 @@
 
 <main id="top">
 
-  <!-- ===== Hero ===== -->
+  <!-- ===== Hero Carousel ===== -->
   <section class="hero" id="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <p class="eyebrow">Manufacturer · OEM / ODM · Factory Direct</p>
-        <h1>Smart Pet Water Fountains<br>&amp; Pet Supplies</h1>
-        <p class="hero-sub">
-          We focus on doing a good job of pet water dispensers. A 23,000 m² self-contained
-          factory with a professional R&amp;D team — from mold development to finished
-          products, one-stop service at competitive prices.
-        </p>
-        <div class="hero-actions">
-          <a href="#products" class="btn btn-primary">View Products</a>
-          <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+    <div class="carousel" id="heroCarousel">
+      <div class="carousel-track" id="carouselTrack">
+        <!-- Slide 1: Factory -->
+        <div class="carousel-slide is-active">
+          <div class="slide-bg" style="background-image:url('images/banners/banner-factory1.jpg')"></div>
+          <div class="slide-overlay"></div>
+          <div class="container slide-content">
+            <div class="slide-copy">
+              <p class="eyebrow">Manufacturer · OEM / ODM · Factory Direct</p>
+              <h1>Smart Pet Water Fountains<br>&amp; Pet Supplies</h1>
+              <p class="hero-sub">
+                We focus on doing a good job of pet water dispensers. A 23,000 m² self-contained
+                factory with a professional R&amp;D team — from mold development to finished
+                products, one-stop service at competitive prices.
+              </p>
+              <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2: WF670 hot seller -->
+        <div class="carousel-slide">
+          <div class="slide-bg" style="background-image:url('images/banners/banner-wf670.png')"></div>
+          <div class="slide-overlay"></div>
+          <div class="container slide-content">
+            <div class="slide-copy">
+              <p class="eyebrow">🔥 Hot Seller · Best-Selling Model</p>
+              <h1>WF670 Smart Water Fountain<br>2.5L Stainless Steel</h1>
+              <p class="hero-sub">
+                304 stainless steel · 5000mAh smart version · multi-layer filtration · silent flowing water.
+                EXW price from <strong>$18.40</strong> / pc.
+              </p>
+              <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3: WF560 hot seller -->
+        <div class="carousel-slide">
+          <div class="slide-bg" style="background-image:url('images/banners/banner-wf560.png')"></div>
+          <div class="slide-overlay"></div>
+          <div class="container slide-content">
+            <div class="slide-copy">
+              <p class="eyebrow">🔥 Hot Seller · Best-Selling Model</p>
+              <h1>WF560 Smart Water Fountain<br>Stainless Steel Style</h1>
+              <p class="hero-sub">
+                Food-grade 304 stainless steel · smart induction · long battery life.
+                EXW price from <strong>$23.79</strong> / pc.
+              </p>
+              <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4: PFF040 feeder -->
+        <div class="carousel-slide">
+          <div class="slide-bg" style="background-image:url('images/banners/banner-pff040.png')"></div>
+          <div class="slide-overlay"></div>
+          <div class="container slide-content">
+            <div class="slide-copy">
+              <p class="eyebrow">🔥 Hot Seller · Smart Pet Feeder</p>
+              <h1>PFF040 Smart Pet Feeder<br>4L WIFI / Button Type</h1>
+              <p class="hero-sub">
+                Dual power mode · moisture-proof freshness lock · app remote control (WIFI model).
+                EXW price from <strong>$16.35</strong> / pc.
+              </p>
+              <div class="hero-actions">
+                <a href="#products" class="btn btn-primary">View Products</a>
+                <a href="#contact" class="btn btn-ghost">Get a Quote</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="images/hero.png" alt="Pet water fountain" id="heroImg">
-      </div>
+      <button class="carousel-arrow prev" data-carousel="prev" aria-label="Previous">‹</button>
+      <button class="carousel-arrow next" data-carousel="next" aria-label="Next">›</button>
+      <div class="carousel-dots" id="carouselDots"></div>
     </div>
     <div class="hero-wave" aria-hidden="true"></div>
   </section>
@@ -126,7 +194,7 @@
     </div>
     <div>
       <strong>Quick Links</strong>
-      <p><a href="#categories">Categories</a> · <a href="#products">Products</a> · <a href="#contact">Contact</a></p>
+      <p><a href="#categories">Categories</a> · <a href="#products">Products</a> · <a href="faq.html">FAQ</a> · <a href="news.html">News</a> · <a href="#contact">Contact</a></p>
     </div>
     <div>
       <strong>Factory</strong>
