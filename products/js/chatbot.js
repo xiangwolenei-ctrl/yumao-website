@@ -79,17 +79,17 @@
     [/价格|多少钱|报价|单价|成本|便宜|优惠|折扣/i, 'price discount'],
     [/样品|打样|试样|试用/i, 'sample'],
     [/交期|发货时间|多久|生产时间|货期/i, 'lead time'],
-    [/付款|支付|定金|货款|tt|汇款/i, 'payment'],
+    [/付款|支付|定金|货款|\btt\b|电汇|汇款/i, 'payment'],
     [/运费|物流|海运|空运|快递|dhl|fedex|运输|货运/i, 'shipping'],
-    [/认证|证书|ce|fcc|rohs|msds|un38|检测报告|合规/i, 'certification'],
+    [/认证|证书|ce认证|fcc认证|rohs认证|msds|un38|检测报告|合规|complian/i, 'certification'],
     [/定制|oem|odm|贴牌|代工|logo|品牌|包装|开发/i, 'oem'],
     [/保修|质保|质量|退换|售后|坏了|维修/i, 'warranty'],
     [/无泵|水泵|静音|噪音|安全|漏电|感应/i, 'pump-free'],
     [/公司|工厂|厂家|地址|参观|在哪|介绍/i, 'company'],
     [/联系|whatsapp|邮箱|电话|客服|人工/i, 'contact'],
     [/推荐|热卖|畅销|爆款|哪款|适合|猫|狗/i, 'recommend'],
-    [/你好|您好|hi|hello|在吗/i, 'hello'],
-    [/谢谢|感谢|好的|ok/i, 'thanks']
+    [/你好|您好|在吗|哈喽|喂/i, 'hello'],
+    [/谢谢|感谢|\bok\b|\bokay\b|好的|没问题/i, 'thanks']
   ];
 
   function answer(q) {
@@ -105,7 +105,11 @@
       let score = 0, hits = 0;
       for (const kw of item.k) {
         const k = String(kw).toLowerCase();
-        if (text.includes(k)) {
+        // 2-3 字符关键词（如 ce/ul/tt）只在词边界匹配，避免误命中 price→ce 这类
+        const matched = k.length <= 3
+          ? new RegExp('(^|[^a-z0-9])' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '([^a-z0-9]|$)').test(text)
+          : text.includes(k);
+        if (matched) {
           hits++;
           // 长关键词/完整词权重更高，但任何命中都算分
           score += k.length >= 5 ? 2 : 1.5;
