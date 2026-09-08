@@ -234,4 +234,80 @@
     .catch(err => {
       grid.innerHTML = '<div class="loading">Failed to load product data: ' + esc(err.message) + '</div>';
     });
+
+  // ============ 浏览量统计（仅管理员可见） ============
+  // 点击顶部品牌 logo 区域 5 次即可切换显示统计浮标
+  (function viewStats() {
+    const KEY = 'yumao_views';
+    const OWNER = 'yumao_owner_v1';
+    let clicks = 0;
+    let lastTap = 0;
+
+    function countView() {
+      try {
+        const d = new Date();
+        const day = d.toISOString().slice(0, 10);
+        const data = JSON.parse(localStorage.getItem(KEY) || '{"total":0,"days":{}}');
+        data.total = (data.total || 0) + 1;
+        data.days[day] = (data.days[day] || 0) + 1;
+        localStorage.setItem(KEY, JSON.stringify(data));
+      } catch (e) { /* ignore */ }
+    }
+    function showStats() {
+      let el = document.getElementById('yumaoStats');
+      if (!el) {
+        el = document.createElement('div');
+        el.id = 'yumaoStats';
+        el.className = 'stats-mini';
+        document.body.appendChild(el);
+      }
+      let data = { total: 0, days: {} };
+      try { data = JSON.parse(localStorage.getItem(KEY) || '{"total":0,"days":{}}'); } catch (e) {}
+      const days = Object.entries(data.days || {}).sort((a, b) => b[0].localeCompare(a[0])).slice(0, 7);
+      const dayStr = days.map(([k, v]) => k.slice(5) + ':' + v).join('  ');
+      el.textContent = '👁 ' + (data.total || 0) + ' visits  |  ' + dayStr;
+      el.classList.add('show');
+      clearTimeout(el._t);
+      el._t = setTimeout(() => el.classList.remove('show'), 8000);
+    }
+    // brand click ×5 unlocks
+    const brand = document.querySelector('.brand');
+    if (brand) {
+      brand.addEventListener('click', (e) => {
+        e.preventDefault();
+        const now = Date.now();
+        if (now - lastTap > 1200) clicks = 0;
+        lastTap = now;
+        clicks++;
+        if (clicks >= 5) { clicks = 0; showStats(); }
+      });
+    }
+    countView();
+  })();
+
+  // ============ 首页联系表单 ============
+  window.homeInquiry = function () {
+    const g = (id) => document.getElementById(id);
+    const name = (g('cName').value || '').trim();
+    const email = (g('cEmail').value || '').trim();
+    const wa = (g('cWa').value || '').trim();
+    const qty = (g('cQty').value || '').trim();
+    const msg = (g('cMsg').value || '').trim();
+    const note = g('cNote');
+    if (!name || !email || !msg) {
+      note.textContent = '⚠️ Please fill your name, email and question.';
+      note.style.color = '#fecaca';
+      return;
+    }
+    const body = 'New Website Inquiry\nName: ' + name + '\nEmail: ' + email +
+      (wa ? '\nWhatsApp: ' + wa : '') + (qty ? '\nProduct/Qty: ' + qty : '') + '\nMessage: ' + msg;
+    let inbox = [];
+    try { inbox = JSON.parse(localStorage.getItem('yumao_inquiries') || '[]'); } catch (e) {}
+    inbox.push({ t: new Date().toISOString(), name: name, email: email, wa: wa, msg: msg });
+    try { localStorage.setItem('yumao_inquiries', JSON.stringify(inbox)); } catch (e) {}
+    const url = 'https://wa.me/8613543780054?text=' + encodeURIComponent(body);
+    note.textContent = '✅ Inquiry saved! Opening WhatsApp to send to our sales team…';
+    note.style.color = '#bbf7d0';
+    window.open(url, '_blank');
+  };
 })();
