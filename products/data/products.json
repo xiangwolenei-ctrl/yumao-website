@@ -3305,7 +3305,7 @@
   "moq": "100",
   "remark": "Smart WIFI version",
   "hot": false,
-  "image": "np01.png",
+  "image": "npp001.jpg",
   "row": 900
  },
  {
@@ -3358,7 +3358,7 @@
   "moq": "100",
   "remark": "WIFI smart feeder",
   "hot": true,
-  "image": "np02.png",
+  "image": "npp002.jpg",
   "row": 901
  },
  {
@@ -3414,7 +3414,7 @@
   "moq": "100",
   "remark": "Video version with 1080P cameras",
   "hot": false,
-  "image": "np03.png",
+  "image": "npp003.jpg",
   "row": 902
  },
  {
@@ -3470,7 +3470,7 @@
   "moq": "100",
   "remark": "4-bowl smart feeder, dual-band WiFi",
   "hot": false,
-  "image": "np04.png",
+  "image": "npp004.jpg",
   "row": 903
  },
  {
@@ -3527,7 +3527,7 @@
   "moq": "100",
   "remark": "Pump-free, UVC, 6000mAh battery (contains battery - MSDS/UN38.3 available)",
   "hot": true,
-  "image": "np05.png",
+  "image": "npp005.jpg",
   "row": 904
  },
  {
@@ -3587,7 +3587,7 @@
   "moq": "100",
   "remark": "Feeding + watering 2-in-1",
   "hot": false,
-  "image": "np06.png",
+  "image": "npp006.jpg",
   "row": 905
  },
  {
@@ -3644,7 +3644,7 @@
   "moq": "100",
   "remark": "Video version with camera",
   "hot": false,
-  "image": "np07.png",
+  "image": "npp007.jpg",
   "row": 906
  },
  {
@@ -3695,7 +3695,7 @@
   "moq": "100",
   "remark": "Large capacity all-stainless, plug-in",
   "hot": false,
-  "image": "np08.png",
+  "image": "npp008.jpg",
   "row": 907
  },
  {
@@ -3748,7 +3748,7 @@
   "moq": "100",
   "remark": "Smart touch, infrared sensor, rechargeable (contains battery - MSDS/UN38.3 available)",
   "hot": false,
-  "image": "np09.png",
+  "image": "npp009.jpg",
   "row": 908
  }
 ]
