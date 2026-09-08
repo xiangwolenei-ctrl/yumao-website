@@ -179,13 +179,28 @@
       <div>
         <h3>ShenZhen Yumao Technology Co., Ltd.</h3>
         <p>深圳屿贸科技有限公司 · Manufacturing plant: No.6 Dongchang Road, Hengli Town, Dongguan City, Guangdong, China</p>
+        <div class="contact-rows">
+          <div class="contact-row"><span>Contact</span><strong>Siyang Shen · 申思阳</strong></div>
+          <div class="contact-row"><span>Phone / WhatsApp</span><strong><a href="https://wa.me/8613543780054" target="_blank" rel="noopener">+86 135 4378 0054</a></strong></div>
+          <div class="contact-row"><span>Contact</span><strong>Yuan Weipeng · 原伟鹏</strong></div>
+          <div class="contact-row"><span>Phone / WhatsApp</span><strong><a href="https://wa.me/8615639186565" target="_blank" rel="noopener">+86 156 3918 6565</a></strong></div>
+          <div class="contact-row"><span>Business</span><strong>OEM / ODM / Custom Development</strong></div>
+        </div>
       </div>
-      <div class="contact-rows">
-        <div class="contact-row"><span>Contact</span><strong>Siyang Shen · 申思阳</strong></div>
-        <div class="contact-row"><span>Phone / WhatsApp</span><strong><a href="https://wa.me/8613543780054" target="_blank" rel="noopener">+86 135 4378 0054</a></strong></div>
-        <div class="contact-row"><span>Contact</span><strong>Yuan Weipeng · 原伟鹏</strong></div>
-        <div class="contact-row"><span>Phone / WhatsApp</span><strong><a href="https://wa.me/8615639186565" target="_blank" rel="noopener">+86 156 3918 6565</a></strong></div>
-        <div class="contact-row"><span>Business</span><strong>OEM / ODM / Custom Development</strong></div>
+      <div class="inq-card">
+        <h3>📩 Leave Your Inquiry</h3>
+        <p class="inq-sub">Email / WhatsApp / question — we reply within 24 hours.</p>
+        <div class="inq-row2">
+          <input type="text" id="cName" placeholder="Your name *">
+          <input type="email" id="cEmail" placeholder="Your email *">
+        </div>
+        <div class="inq-row2">
+          <input type="text" id="cWa" placeholder="WhatsApp number (optional)">
+          <input type="text" id="cQty" placeholder="Product / quantity (optional)">
+        </div>
+        <textarea id="cMsg" placeholder="Your question — e.g. target price, models interested, customization needs *"></textarea>
+        <button class="btn btn-primary" onclick="homeInquiry()">Send Inquiry</button>
+        <div class="inq-note" id="cNote"></div>
       </div>
     </div>
   </section>
@@ -220,5 +235,6 @@
 </div>
 
 <script src="js/app.js"></script>
+<script src="js/chatbot.js"></script>
 </body>
 </html>
