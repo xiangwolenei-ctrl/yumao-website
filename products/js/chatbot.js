@@ -71,19 +71,57 @@
     }
   ];
 
-  const FALLBACK = 'Sorry, I could not find that in my knowledge base. 😅 For specific questions please leave your email/WhatsApp in the inquiry form, or contact Siyang Shen (+86 135 4378 0054) / Yuan Weipeng (+86 156 3918 6565) — we reply within 24 hours.';
+  const FALLBACK = 'Sorry, I could not find that in my knowledge base. 😅 抱歉，我暂时没有找到相关答案。请留下您的邮箱/WhatsApp（下方表单）或直接联系 Siyang Shen (+86 135 4378 0054) / Yuan Weipeng (+86 156 3918 6565)，我们会在 24 小时内回复。';
+
+  // 中文短语 → 英文关键词（让中文提问也能命中知识库）
+  const CN_MAP = [
+    [/起订|起批量|最少.*量|多少.*起|moq/i, 'moq'],
+    [/价格|多少钱|报价|单价|成本|便宜|优惠|折扣/i, 'price discount'],
+    [/样品|打样|试样|试用/i, 'sample'],
+    [/交期|发货时间|多久|生产时间|货期/i, 'lead time'],
+    [/付款|支付|定金|货款|tt|汇款/i, 'payment'],
+    [/运费|物流|海运|空运|快递|dhl|fedex|运输|货运/i, 'shipping'],
+    [/认证|证书|ce|fcc|rohs|msds|un38|检测报告|合规/i, 'certification'],
+    [/定制|oem|odm|贴牌|代工|logo|品牌|包装|开发/i, 'oem'],
+    [/保修|质保|质量|退换|售后|坏了|维修/i, 'warranty'],
+    [/无泵|水泵|静音|噪音|安全|漏电|感应/i, 'pump-free'],
+    [/公司|工厂|厂家|地址|参观|在哪|介绍/i, 'company'],
+    [/联系|whatsapp|邮箱|电话|客服|人工/i, 'contact'],
+    [/推荐|热卖|畅销|爆款|哪款|适合|猫|狗/i, 'recommend'],
+    [/你好|您好|hi|hello|在吗/i, 'hello'],
+    [/谢谢|感谢|好的|ok/i, 'thanks']
+  ];
 
   function answer(q) {
-    const text = String(q || '').toLowerCase();
-    let best = null, bestScore = 0;
-    for (const item of KB) {
-      let score = 0;
-      for (const kw of item.k) {
-        if (text.includes(kw)) score += kw.length > 4 ? 2 : 1;
-      }
-      if (score > bestScore) { bestScore = score; best = item; }
+    const raw = String(q || '').trim();
+    let text = raw.toLowerCase();
+    // 中文 → 英文转换
+    let cnHit = false;
+    for (const [re, en] of CN_MAP) {
+      if (re.test(raw)) { text += ' ' + en; cnHit = true; }
     }
-    return bestScore >= 2 ? best.a : FALLBACK;
+    let best = null, bestScore = 0, bestHits = 0;
+    for (const item of KB) {
+      let score = 0, hits = 0;
+      for (const kw of item.k) {
+        const k = String(kw).toLowerCase();
+        if (text.includes(k)) {
+          hits++;
+          // 长关键词/完整词权重更高，但任何命中都算分
+          score += k.length >= 5 ? 2 : 1.5;
+        }
+      }
+      if (score > bestScore || (score === bestScore && hits > bestHits)) {
+        bestScore = score; best = item; bestHits = hits;
+      }
+    }
+    // 任一关键词命中即可回复（score>=1.5）
+    if (best && bestScore >= 1.5) return best.a;
+    // 纯中文没转成英文也没命中 → 尝试中文兜底提示
+    if (cnHit || /[\u4e00-\u9fff]/.test(raw)) {
+      return '我理解您在使用中文提问。请问以下哪种？①价格/MOQ ②样品 ③交期 ④付款 ⑤运费 ⑥认证(MSDS/UN38.3) ⑦OEM定制 ⑧公司信息 ⑨联系人工。也可以直接回复数字或留下邮箱/WhatsApp，我们 24 小时内答复。';
+    }
+    return FALLBACK;
   }
 
   // ---------- UI ----------
@@ -177,4 +215,24 @@
   else build();
 
   window.YumaoChat = { answer };
+
+  // ---- 跨页锚点定位（从其他页带 #contact / #products 跳入时滚动到位）----
+  function goAnchor(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    // 去掉 sticky 导航高度
+    const y = el.getBoundingClientRect().top + window.scrollY - 78;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  }
+  function handleHash() {
+    if (location.hash && location.hash.length > 1) {
+      const id = decodeURIComponent(location.hash.slice(1));
+      // 等 DOM/图片就绪后定位（页面初次加载内容可能延迟）
+      setTimeout(() => goAnchor(id), 500);
+      setTimeout(() => goAnchor(id), 1500);
+    }
+  }
+  if (document.readyState === 'complete') handleHash();
+  else window.addEventListener('load', handleHash);
+  // 同页锚点点击（如 FAQ 页内，若无对应 id 则忽略，浏览器默认行为兜底）
 })();
