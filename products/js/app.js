@@ -164,6 +164,26 @@
     document.getElementById('navLinks').classList.toggle('open');
   });
 
+  // ---- 站内锚点统一平滑滚动（修复轮播内按钮跳顶部问题）----
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const href = a.getAttribute('href');
+    if (!href || href.length < 2) return;
+    const targetId = decodeURIComponent(href.slice(1));
+    const target = document.getElementById(targetId);
+    if (!target) return; // 非同页锚点(如 index.html#contact)让浏览器处理
+    e.preventDefault();
+    // 若导航菜单展开则收起
+    const navLinks = document.getElementById('navLinks');
+    if (navLinks && navLinks.classList.contains('open')) navLinks.classList.remove('open');
+    const y = target.getBoundingClientRect().top + window.scrollY - 78; // 减去 sticky 导航高度
+    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    try { history.replaceState(null, '', '#' + targetId); } catch (err) {}
+    // 轮播 slide 内的按钮点击后，确保不被轮播自动切换打扰（暂停计时器并聚焦目标）
+    if (window.__carouselPause) window.__carouselPause(4000);
+  });
+
   // ---- search ----
   let t;
   searchInput.addEventListener('input', () => { clearTimeout(t); t = setTimeout(render, 150); });
@@ -218,7 +238,20 @@
     const hero = document.getElementById('hero');
     hero.addEventListener('mouseenter', () => clearInterval(timer));
     hero.addEventListener('mouseleave', restart);
+    // 暴露暂停：外部(锚点滚动)调用后暂停自动切换 N ms
+    window.__carouselPause = function (ms) {
+      clearInterval(timer);
+      setTimeout(restart, ms || 4000);
+    };
     restart();
+    // 页面带 #hash 加载时（如从 FAQ 跳回 #contact）也滚动到位
+    if (location.hash && location.hash.length > 1) {
+      const el = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      if (el) setTimeout(() => {
+        const y = el.getBoundingClientRect().top + window.scrollY - 78;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      }, 600);
+    }
   })();
 
   // ---- init ----
