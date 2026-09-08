@@ -32,6 +32,29 @@
   .d-block li { padding: 7px 0 7px 24px; position: relative; color: #334155; font-size: 14.5px; }
   .d-block li::before { content: "✔"; position: absolute; left: 0; color: var(--brand); font-size: 13px; }
   .back { display: inline-block; margin: 26px 0 0; color: var(--brand); font-weight: 600; }
+  /* battery note */
+  .battery-note { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 12px; padding: 20px 24px; }
+  .battery-note h3 { border-left: 0; padding-left: 0; }
+  .battery-note li::before { content: "🔋"; color: #b45309; }
+  /* hover zoom on detail image */
+  .d-media { cursor: zoom-in; overflow: hidden; }
+  .d-media img { transition: transform .3s ease; }
+  .d-media:hover img { transform: scale(1.12); }
+  .d-zoom { display:none; }
+  body.zooming .d-zoom {
+    display: flex; position: fixed; inset: 0; z-index: 100; background: rgba(15,23,42,.92);
+    align-items: center; justify-content: center; cursor: zoom-out;
+  }
+  body.zooming .d-zoom img { max-width: 92vw; max-height: 92vh; object-fit: contain; border-radius: 8px; }
+  /* inquiry form */
+  .inq { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 14px; padding: 24px; }
+  .inq h3 { border-left: 0; padding-left: 0; }
+  .inq-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .inq input, .inq textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 10px; font-size: 14px; font-family: inherit; outline: none; }
+  .inq input:focus, .inq textarea:focus { border-color: var(--brand); }
+  .inq textarea { min-height: 90px; }
+  .inq .btn { margin-top: 6px; }
+  .inq-hint { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -91,6 +114,25 @@
     <div class="d-block"><h3>Product Advantages</h3><ul><li>1. Silent flowing water</li><li>2. Food-grade 304 stainless steel noodle bowl</li><li>3. 2L capacity</li><li>4. Multi-layer filtration system</li><li>5. Continuously provide fresh and living water</li><li>6. Real-time observation of water level through window design</li></ul></div>
     <div class="d-block"><h3>Product Parameters</h3><ul><li>1. 25 decibels silent flowing water</li><li>2. Multiple filtration system</li><li>3. 2L capacity</li><li>4. An optional anti-dry-burning water pump is available (which will cut off power and stop discharging water in case of water shortage)</li></ul></div>
     <div class="d-block"><h3>Standard Package</h3><ul><li>Including a 304 stainless steel upper cover for the main unit, a plastic PC barrel body, and a PC filter tank,</li><li>Standard water pump, adapter (optional), white filter element, blue filter cotton, 304 stainless steel</li><li>Steel nozzle, TPU connecting tube, neutral multilingual instruction manual, neutral English color box</li></ul></div>
+    <div class="d-block battery-note"><h3>🔋 Battery &amp; Shipping Compliance</h3><ul><li>This product contains a built-in rechargeable battery.</li><li>Complete documentation available: <b>MSDS</b> (Material Safety Data Sheet)</li><li><b>Sea Transport Identification Report</b> (海运鉴定报告) — required for ocean freight</li><li><b>UN38.3 Test Report</b> — lithium battery transport safety certification</li><li>All air/sea shipping compliance documents can be provided for your customs clearance and Amazon FBA.</li></ul></div>
+
+    <div class="d-block inq">
+      <h3>📩 Quick Inquiry — WF450 3.2L</h3>
+      <p style="color:var(--muted);font-size:13.5px;margin-bottom:14px">Leave your contact and question, we reply within 24 hours.</p>
+      <div class="inq-row">
+        <input type="text" id="inqName" placeholder="Your name *">
+        <input type="email" id="inqEmail" placeholder="Your email *">
+      </div>
+      <div class="inq-row">
+        <input type="text" id="inqWa" placeholder="WhatsApp number (optional)">
+        <input type="text" id="inqQty" placeholder="Quantity / MOQ (optional)">
+      </div>
+      <textarea id="inqMsg" placeholder="Your question / requirements (e.g. target price, packaging, customization) *"></textarea>
+      <div>
+        <button class="btn btn-primary" onclick="sendInquiry()">Send Inquiry</button>
+      </div>
+      <div class="inq-hint" id="inqHint">Prefer chat? <a href="https://wa.me/8613543780054" target="_blank" rel="noopener">WhatsApp +86 135 4378 0054</a> · <a href="https://wa.me/8615639186565" target="_blank" rel="noopener">+86 156 3918 6565</a></div>
+    </div>
 
     <div class="d-block">
       <h3>Need Samples or Customization?</h3>
@@ -98,6 +140,9 @@
     </div>
   </div>
 </main>
+
+<!-- zoom overlay -->
+<div class="d-zoom" id="dZoom" onclick="this.className='d-zoom'"><img id="dZoomImg" alt="zoom"></div>
 
 <footer class="footer">
   <div class="container footer-inner">
@@ -112,6 +157,50 @@
   document.getElementById('navToggle').addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('open');
   });
+  // image zoom on click (detail view)
+  document.querySelectorAll('.d-media').forEach(m => {
+    m.addEventListener('click', () => {
+      const img = m.querySelector('img');
+      if (!img) return;
+      document.getElementById('dZoomImg').src = img.src;
+      document.getElementById('dZoom').className = 'd-zoom';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  document.getElementById('dZoom').addEventListener('click', function () {
+    this.className = 'd-zoom';
+    document.body.style.overflow = '';
+  });
+  // send inquiry: opens WhatsApp / email with prefilled message
+  function sendInquiry() {
+    const name = (document.getElementById('inqName').value || '').trim();
+    const email = (document.getElementById('inqEmail').value || '').trim();
+    const wa = (document.getElementById('inqWa').value || '').trim();
+    const qty = (document.getElementById('inqQty').value || '').trim();
+    const msg = (document.getElementById('inqMsg').value || '').trim();
+    const hint = document.getElementById('inqHint');
+    if (!name || !email || !msg) {
+      hint.innerHTML = '⚠️ Please fill your name, email and question.';
+      hint.style.color = '#dc2626';
+      return;
+    }
+    const model = "WF450 3.2L";
+    const body = 'New Inquiry — ' + model + '
+Name: ' + name + '
+Email: ' + email + (wa ? '
+WhatsApp: ' + wa : '') + (qty ? '
+Qty: ' + qty : '') + '
+Message: ' + msg;
+    const saved = { t: new Date().toISOString(), model: model, name: name, email: email, wa: wa, qty: qty, msg: msg };
+    let inbox = [];
+    try { inbox = JSON.parse(localStorage.getItem('yumao_inquiries') || '[]'); } catch (e) {}
+    inbox.push(saved);
+    try { localStorage.setItem('yumao_inquiries', JSON.stringify(inbox)); } catch (e) {}
+    const url = 'https://wa.me/8613543780054?text=' + encodeURIComponent(body);
+    hint.innerHTML = '✅ Inquiry saved! Opening WhatsApp to send… (you can also email ' + email + ')';
+    hint.style.color = '#15803d';
+    window.open(url, '_blank');
+  }
 </script>
 </body>
 </html>
