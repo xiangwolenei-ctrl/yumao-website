@@ -23,7 +23,7 @@ window.I18N = {
   "home.footerCtaSub": { en:"Get a quote or OEM/ODM support today.", zh:"立即获取报价或 OEM/ODM 支持。" },
   "why.items": [
     { en:"One-Stop Solution", zh:"一站式解决方案" },
-    { en:"Stable, Consistent Quality", zh":"稳定一致的品质" },
+    { en:"Stable, Consistent Quality", zh:"稳定一致的品质" },
     { en:"Strong R&D & Innovation", zh:"强大的研发与创新" },
     { en:"Scalable Manufacturing", zh:"可规模化制造" },
     { en:"Complete Compliance", zh:"完善的合规体系" }
