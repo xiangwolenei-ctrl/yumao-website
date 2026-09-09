@@ -98,7 +98,7 @@
       e.preventDefault();
       var btn = form.querySelector('button[type=submit]');
       var data = new FormData(form);
-      var email = form.getAttribute('data-email') || 'info@qingyue-tech.com';
+      var email = form.getAttribute('data-email') || 'qyue2411@gmail.com';
       var obj = {}; data.forEach(function(v,k){ obj[k]=v; });
       var orig = btn.innerHTML;
       btn.disabled = true; btn.innerHTML = '...';
