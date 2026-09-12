@@ -118,6 +118,11 @@
       list = list.filter(p =>
         (p.model + ' ' + p.name + ' ' + p.type + ' ' + p.section + ' ' + (p.remark || '')).toLowerCase().includes(q)
       );
+    } else if (activeCategory === 'All') {
+      // 默认视图：2026 New Products 排最前，其余保持数据顺序
+      const NEW = '2026 New Products';
+      const isNew = (p) => p.section === NEW;
+      list = list.filter(isNew).concat(list.filter(p => !isNew(p)));
     }
     if (!list.length) {
       grid.innerHTML = '';
@@ -128,8 +133,17 @@
     grid.innerHTML = list.map(p => cardHtml(p)).join('');
   }
 
+  function sectionOrder(sections) {
+    // 新品分类排最前
+    const NEW = '2026 New Products';
+    const sorted = sections.slice();
+    const idx = sorted.indexOf(NEW);
+    if (idx > 0) { sorted.splice(idx, 1); sorted.unshift(NEW); }
+    return sorted;
+  }
+
   function buildFilters() {
-    const sections = ['All', ...new Set(PRODUCTS.map(p => p.section))];
+    const sections = sectionOrder(['All', ...new Set(PRODUCTS.map(p => p.section))]);
     filterBar.innerHTML = sections.map(s =>
       '<button class="chip' + (s === activeCategory ? ' active' : '') + '" data-cat="' + esc(s) + '">' + esc(s) + '</button>'
     ).join('');
@@ -143,7 +157,7 @@
   }
 
   function buildCategories() {
-    const sections = [...new Set(PRODUCTS.map(p => p.section))];
+    const sections = sectionOrder([...new Set(PRODUCTS.map(p => p.section))]);
     const counts = {};
     PRODUCTS.forEach(p => { counts[p.section] = (counts[p.section] || 0) + 1; });
     catGrid.innerHTML = sections.map(s =>
