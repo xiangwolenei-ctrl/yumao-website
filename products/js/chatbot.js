@@ -11,7 +11,7 @@
     },
     {
       k: ['price', 'cost', 'how much', 'quote', 'pricing', 'exw', 'fob', 'cif', 'wholesale price'],
-      a: 'All prices on our site are EXW factory prices in USD (tax and freight excluded). We can quote FOB / CIF / DDP to your port — just tell us your destination and quantity. Prices start from $5.56 for entry models up to premium smart models around $25 retail.'
+      a: 'All prices on our site are EXW factory prices in USD (tax and freight excluded). We can quote FOB / CIF / DDP to your port — just tell us your destination and quantity. Prices start from $5.56 for entry models up to around $25 for premium smart models.'
     },
     {
       k: ['sample', 'samples', 'try', 'test before'],
@@ -35,7 +35,7 @@
     },
     {
       k: ['oem', 'odm', 'custom', 'customize', 'private label', 'logo', 'brand', 'packaging', 'design'],
-      a: 'Yes — we are the factory with our own R&D and mold team. We support custom logo, color, packaging, manuals and full ODM development. One-stop from mold to finished goods.'
+      a: 'Yes — we work directly with the factory and its in-house R&D and mould team, so customization runs through one chain with no middle layer. We support custom logo, colour, packaging, manuals and full ODM development, from mould to finished goods.'
     },
     {
       k: ['warranty', 'guarantee', 'quality', 'defect', 'return', 'replace', 'after-sale'],
@@ -43,7 +43,7 @@
     },
     {
       k: ['pump-free', 'no pump', 'pumpless', 'without pump', 'water fountain', 'fountain'],
-      a: 'Our pump-free fountains have no water pump inside — no clogging, no mold, no noise, no pump failure. 100% water-electricity separation for safety, with infrared sensor and multiple flow modes. A truly differentiated product for the US/EU market.'
+      a: 'Our fountains are pump-free by design — no pump at all, so no clogging, no mold, no pump noise and no pump failure. 100% water-electricity separation for safety, with infrared sensor and multiple flow modes. A truly differentiated product for the US/EU market.'
     },
     {
       k: ['discount', 'cheaper', 'best price', 'deal', 'offer', 'bulk discount'],
@@ -51,11 +51,11 @@
     },
     {
       k: ['who', 'about', 'company', 'factory', 'manufacturer', 'where', 'location', 'visit'],
-      a: 'ShenZhen Yumao Technology Co., Ltd. operates a 23,000 m² self-contained factory in Dongguan, Guangdong, China — 219 production staff and 13 R&D engineers. Customers are always welcome to visit.'
+      a: 'ShenZhen Yumao Technology Co., Ltd. is the long-term export partner of a 23,000 m² pet product factory in Dongguan, Guangdong, China — 219 production staff and 13 R&D engineers. We handle export, OEM/ODM coordination and shipping documents. Customers are always welcome to visit the factory.'
     },
     {
       k: ['contact', 'whatsapp', 'email', 'phone', 'call', 'reach', 'talk', 'human', 'agent'],
-      a: 'You can reach us 24/7: Siyang Shen +86 135 4378 0054, Yuan Weipeng +86 156 3918 6565 (WhatsApp). Or leave your email and question in the inquiry form below and we reply within 24 hours.'
+      a: 'You can reach us 24/7 on WhatsApp: Siyang Shen +86 135 4378 0054 and Yuan Weipeng +86 156 3918 6565, or email xiangwolenei@gmail.com. Or leave your email and question in the inquiry form below and we reply within 24 hours.'
     },
     {
       k: ['cat', 'dog', 'which', 'recommend', 'suitable', 'best seller', 'popular', 'hot'],
@@ -63,7 +63,7 @@
     },
     {
       k: ['hello', 'hi', 'hey', 'good morning', 'good afternoon'],
-      a: 'Hello! 👋 Welcome to Yumao Pet — a direct pet water fountain / feeder factory. Ask me about prices, MOQ, samples, shipping, or customization, and I will answer right away.'
+      a: 'Hello! 👋 Welcome to Yumao Pet — factory-direct pet water fountains and feeders. Ask me about prices, MOQ, samples, shipping, or customization, and I will answer right away.'
     },
     {
       k: ['thank', 'thanks', 'great', 'perfect', 'ok', 'nice'],
@@ -71,7 +71,7 @@
     }
   ];
 
-  const FALLBACK = 'Sorry, I could not find that in my knowledge base. 😅 抱歉，我暂时没有找到相关答案。请留下您的邮箱/WhatsApp（下方表单）或直接联系 Siyang Shen (+86 135 4378 0054) / Yuan Weipeng (+86 156 3918 6565)，我们会在 24 小时内回复。';
+  const FALLBACK = 'Sorry, I could not find that in my knowledge base. 😅 抱歉，我暂时没有找到相关答案。请留下您的邮箱/WhatsApp（下方表单）或直接联系 申思阳 (+86 135 4378 0054) / 原伟鹏 (+86 156 3918 6565)，我们会在 24 小时内回复。';
 
   // 中文短语 → 英文关键词（让中文提问也能命中知识库）
   const CN_MAP = [
